@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmnls:th="http://www.thymleaf.org" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:xmnls="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"
+  >
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-primary my-1">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">Gestion des Approvisionnenments</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Clients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Link</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <div class="card mt-2">
+    <div class="card-header">
+      <h5>Liste des etudiants</h5>
+    </div>
+    <div class="card-body">
+
+    </div>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+
+        <th>matricule</th>
+        <th>nom et prenom</th>
+        <th>classe</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="data:${listEtudiants}">
+        <td th:text="${data.matricuke}"></td>
+        <td th:text="${data.nom}+${data.prenom}"></td>
+        <td th:text="${data.classe}"></td>
+        <td><a type="button" class="btn btn-xs btn-outline-success "
+        ></a></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+</body>
+</html>
